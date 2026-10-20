@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Zzz — grupos</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <h1>Zzz</h1>
+    <p id="status" role="status"></p>
+    <label class="auto" title="Dormir automáticamente las pestañas que llevan tiempo sin usarse">
+      <input type="checkbox" id="auto" role="switch"> Auto
+    </label>
+  </header>
+  <p id="notice" role="alert" hidden></p>
+  <ul id="groups" aria-label="Grupos de pestañas"></ul>
+  <footer>
+    <div class="tools">
+      <button type="button" id="sweep-now" title="Duerme ahora lo que lleve más del tiempo de su regla sin usarse (aunque Auto esté apagado)">🧹 Barrer ahora</button>
+      <button type="button" id="other-windows" hidden title="Duerme todo lo de las demás ventanas (respeta los candados)">💤 Dormir las demás ventanas</button>
+    </div>
+    <button type="button" id="rules">⚙️ Reglas por grupo…</button>
+  </footer>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

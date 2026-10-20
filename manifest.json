@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Zzz — dormir grupos de pestañas",
+  "version": "0.1.0",
+  "description": "Duerme y despierta pestañas por grupo, a mano o con reglas automáticas. Sin acceso a tus webs salvo que actives el 💤 en el título de la pestaña (permiso opcional); red bloqueada en sus páginas.",
+  "minimum_chrome_version": "150",
+  "permissions": ["alarms", "contextMenus", "scripting", "storage", "tabGroups", "tabs"],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
+  "content_security_policy": {
+    "extension_pages": "default-src 'none'; script-src 'self'; object-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; form-action 'none'; frame-src 'none'"
+  },
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": {
+    "default_title": "Zzz — grupos de pestañas",
+    "default_popup": "popup/popup.html"
+  },
+  "options_ui": { "page": "options/options.html", "open_in_tab": true },
+  "commands": {
+    "sleep-current-group": {
+      "suggested_key": { "default": "Alt+Shift+D" },
+      "description": "Dormir el grupo de la pestaña actual"
+    },
+    "sleep-current-tab": {
+      "suggested_key": { "default": "Alt+Shift+S" },
+      "description": "Dormir solo la pestaña actual (pasa a la de al lado)"
+    }
+  },
+  "icons": { "16": "icons/16.png", "48": "icons/48.png", "128": "icons/128.png" }
+}

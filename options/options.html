@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Zzz — reglas</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main>
+    <h1>Zzz · reglas del automático</h1>
+
+    <section class="general" aria-labelledby="general-title">
+      <h2 id="general-title">General</h2>
+      <label class="switch">
+        <input type="checkbox" id="auto" role="switch">
+        <span>Dormir automáticamente las pestañas sin usar</span>
+      </label>
+      <label class="switch">
+        <input type="checkbox" id="mark-groups" role="switch">
+        <span>Mostrar 💤 en el nombre del grupo cuando esté dormido</span>
+      </label>
+      <label class="switch">
+        <input type="checkbox" id="mark-tabs" role="switch">
+        <span>Poner 💤 en el título de cada pestaña dormida</span>
+      </label>
+      <p class="hint" id="mark-tabs-note">Al activarlo, Chromium te pide el permiso «leer y cambiar todos tus datos» en los sitios http/https (no existe un permiso más pequeño para cambiar solo el título). Zzz solo cambia el título de la pestaña justo antes de dormirla, pero con este permiso el bloqueo de red del manifest ya no cubre el código que corre dentro de las páginas: esa garantía pasa a depender de que revises el código (es corto). Si lo rechazas, Zzz sigue funcionando sin el símbolo en la pestaña.</p>
+      <label class="field">
+        <span>Minutos sin usar antes de dormir (por defecto)</span>
+        <input type="number" id="default-minutes" min="1" step="1" inputmode="numeric">
+      </label>
+      <p class="hint">Nunca se duerme la pestaña activa de cada ventana ni una que esté sonando. Si desinstalas Zzz, apaga antes el 💤 para que no quede en los nombres.</p>
+    </section>
+
+    <section aria-labelledby="rules-title">
+      <h2 id="rules-title">Reglas por grupo</h2>
+      <p class="hint">«Defecto» usa el tiempo de arriba. «🔒 Nunca» protege el grupo del automático y de «Dormir todos los demás».</p>
+      <ul id="rules"></ul>
+    </section>
+  </main>
+  <script type="module" src="options.js"></script>
+</body>
+</html>

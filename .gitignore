@@ -1,0 +1,7 @@
+# Cuaderno interno de trabajo y documentos de proceso: no forman parte del repo público
+.superpowers/
+docs/superpowers/
+
+node_modules/
+*.log
+.DS_Store

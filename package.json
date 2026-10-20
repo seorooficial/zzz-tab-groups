@@ -1,0 +1,12 @@
+{
+  "name": "zzz-tab-groups",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Zzz: put Chromium tabs to sleep by group or one by one, by hand or with automatic per-group rules.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test \"tests/*.test.js\"",
+    "test:e2e": "node tests/e2e/api-smoke.mjs && node tests/e2e/manual-sleep.mjs && node tests/e2e/automatic-rules.mjs && node tests/e2e/chips-and-lists.mjs && node tests/e2e/tab-marks.mjs && node tests/e2e/shortcuts-and-tools.mjs"
+  }
+}
